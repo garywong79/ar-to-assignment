@@ -30,7 +30,11 @@ when "complete"
 	tasks[index -1].save
 	puts "set task to complete"
 when "delete"
-	put "delete task"
+	tasks = Task.all
+	index = string.to_i
+	tasks.delete(tasks[index-1])
+	tasks[index -1].save
+	puts "delete task"
 else
 	puts "Invalid Command."
 	puts "Available Command:"
