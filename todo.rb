@@ -8,7 +8,17 @@ string = ARGV.join(" ")
 
 case command
 when "list"
-	puts "list all tasks"
+	puts "Task List"
+	puts "======="
+	tasks = Task.all
+	tasks.each_with_index do |task,index|
+		if task.complete == 0
+    puts "#{index +1}, #{task.name}[NOT DONE]"
+else
+	puts "#{index +1}, #{task.name}[DONE]"
+	end
+end
+
 when "new"
 	puts "create new task"
 when "complete"
