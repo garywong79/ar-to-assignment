@@ -20,9 +20,11 @@ else
 end
 
 when "new"
-	puts "create new task"
+	Task.create(name: string, complete: 0)
+	puts "create new task: "
+
 when "complete"
-	puts "set task to complete"
+	puts "set task to complete [DONE]/[NOT DONE]"
 when "delete"
 	put "delete task"
 else
